@@ -8,6 +8,7 @@ class SlidingWindow13{
             mpp.put(s.charAt(right),mpp.getOrDefault(s.charAt(right),0)+1);
 			if(mpp.size()>k){
 				mpp.put(s.charAt(left),mpp.get(s.charAt(left))-1);
+				if(mpp.get(s.charAt(left))==0)mpp.remove(s.charAt(left));
 				left++;
 			}
 			if(mpp.size()<=k)maxlen=Math.max(maxlen,right-left+1);
